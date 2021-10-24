@@ -4,7 +4,7 @@ import { Button } from '../components/ui/Button'
 const Home: NextPage = () => {
   return (
     <div className={`h-screen bg-black`}>
-			<Button>Button</Button>
+			<Button>Try notion for free</Button>
     </div>
   )
 }
