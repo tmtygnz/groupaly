@@ -6,9 +6,9 @@ module.exports = {
   theme: {
     extend: {
 			colors: {
-        "normal-normal": "#31D655",
-				"normal-hover": "#46C261",
-				"normal-select": "#50AA64",
+        "normal-normal": "#0075FF",
+				"normal-hover": "#0259BF",
+				"normal-select": "#00489C",
 				"red-normal": "#D64F31",
 				"red-hover": "#BE5841",
 				"red-select": "#AE5A47"

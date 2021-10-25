@@ -12,7 +12,7 @@ const colorTypes = {
 export const Button: React.FC<Props> = ({ children, colorType = "normal" }) => {
   return (
     <button
-      className={`font-bold text-xs border rounded text-white
+      className={`font-bold border rounded text-white
 			py-3 px-3.5 ${colorTypes[colorType]}`}
     >
       {children}
