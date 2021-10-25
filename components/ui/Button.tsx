@@ -9,11 +9,11 @@ const colorTypes = {
   red: "bg-red-normal hover:bg-red-hover active:bg-red-select border-red-normal",
 };
 
-export const Button: React.FC<Props> = ({ children, colorType = "normal" }) => {
+export const Button: React.FC<Props> = ({ children, className,colorType = "normal" }) => {
   return (
     <button
       className={`font-bold border rounded text-white
-			py-3 px-3.5 ${colorTypes[colorType]}`}
+			py-3 px-3.5 ${colorTypes[colorType]} ${className}`}
     >
       {children}
     </button>
