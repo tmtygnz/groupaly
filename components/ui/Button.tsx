@@ -19,7 +19,7 @@ const colorTypes = {
 export const Button: React.FC<Props> = ({
   children,
   className,
-  Type = "red_outline",
+  Type = "normal",
   padding = "normal",
 }) => {
   return (

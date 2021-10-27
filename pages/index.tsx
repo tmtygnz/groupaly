@@ -1,10 +1,10 @@
 import type { NextPage } from 'next'
-import { Input } from '../components/ui/Input'
+import { Button } from '../components/ui/Button'
 
 const Home: NextPage = () => {
   return (
     <div className={`h-screen bg-black p-5`}>
-			<Input type="password" placeholder="Password"/>
+			<Button>Test</Button>
     </div>
   )
 }
