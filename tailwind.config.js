@@ -9,7 +9,9 @@ module.exports = {
         "normal-normal": "#0075FF",
         "normal-darker": "#005DCA",
 				"error-normal": "#FF0000",
-				"error-darker": "#BC0000"
+				"error-darker": "#BC0000",
+				"bg": "#FEFBF3",
+				"fg": "#F8F0DF"
       },
       fontFamily: {
         sans: ["Mulish", ...defaultTheme.fontFamily.sans],
