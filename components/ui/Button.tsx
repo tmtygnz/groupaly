@@ -6,16 +6,13 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const buttonPadding = {
-	sm: "py-1.5 px-2",
-  normal: "py-1.5 px-6",	
+	sm: "px-5 py-px",
+  normal: "px-8 py-2.5",	
 };
 
 const colorTypes = {
-  normal: "bg-normal-normal hover:bg-normal-darker",
-  red: "bg-error-normal hover:bg-error-darker",
-	normal_outline: "border border-normal-normal bg-normal-normal hover:bg-opacity-0 hover:text-normal-normal",
-	red_outline: "border border-error-normal bg-error-normal hover:bg-opacity-0 hover:text-error-normal",
-	ghost: "bg-black bg-opacity-0 hover:bg-opacity-10"
+  normal: "bg-maroonish-normal hover:bg-maroonish-hover active:bg-maroonish-active text-white",
+  blue: "bg-blue-accent hover:bg-blue-accent-dark text-white",
 };
 
 export const Button: React.FC<Props> = ({
@@ -26,7 +23,7 @@ export const Button: React.FC<Props> = ({
 }) => {
   return (
     <button
-      className={`rounded transition duration-200 ease-in-out
+      className={`font-bold rounded-lg transition duration-200 ease-in-out
 			${colorTypes[Type]} ${buttonPadding[padding]} ${className}`}
     >
       {children}
