@@ -4,7 +4,7 @@ import { Dashboard } from "../components/Dashboard/Dashboard";
 import { Header } from "../components/Dashboard/Header";
 const dashboard: NextPage = () => {
   return (
-    <div >
+    <div>
 			<Header/>
       <Dashboard/>
     </div>
