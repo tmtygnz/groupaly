@@ -4,7 +4,7 @@ export const Dashboard = () => {
   return (
     <div className="h-full">
       <div className="banner h-20 flex items-center justify-center bg-gradient-to-r from-green-400 to-blue-500 rounded m-3 realtive">
-        <div>
+        <div className="m-3">
           <span className="Quote font-bold">
             You can't connect the dots looking forward; you can only connect
             them looking backwards
