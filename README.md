@@ -1,4 +1,4 @@
-![infdos](C:\Users\Timothy\Desktop\infdos.png)
+![infdos](./img/infdos.png)
 
 > Making studying easier. 
 
