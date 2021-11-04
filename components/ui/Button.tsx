@@ -11,7 +11,7 @@ const buttonPadding = {
 };
 
 const colorTypes = {
-  normal: "bg-brn-500 hover:bg-brn-400 active:bg-brn-300 text-white",
+  normal: "bg-brn-500 hover:bg-brn-400 active:ring-4 text-white",
   blue: "bg-blue-accent hover:bg-blue-accent-dark text-white",
 };
 
