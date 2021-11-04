@@ -6,8 +6,8 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const buttonPadding = {
-	sm: "px-5 py-px",
-  normal: "px-8 py-2.5",	
+  sm: "px-5 py-px",
+  normal: "px-8 py-2.5",
 };
 
 const colorTypes = {
@@ -20,13 +20,13 @@ export const Button: React.FC<Props> = ({
   className,
   Type = "normal",
   padding = "normal",
-	...props
+  ...props
 }) => {
   return (
     <button
       className={`font-bold rounded-lg transition duration-200 ease-in-out
 			${colorTypes[Type]} ${buttonPadding[padding]} ${className}`}
-			{...props}
+      {...props}
     >
       {children}
     </button>

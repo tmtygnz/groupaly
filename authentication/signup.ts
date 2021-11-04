@@ -6,6 +6,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
 } from "firebase/auth";
+import { useUser } from "../context/UserContext";
 
 let firebaseConfig;
 let app;
@@ -18,19 +19,16 @@ export const init = (key: string) => {
   db = getFirestore(app);
 };
 
-export const signUpWithGoogle = () => {
+export const signUpWithGoogle = async (): Promise<string> => {
   const gProvider = new GoogleAuthProvider();
   const auth = getAuth();
-  signInWithPopup(auth, gProvider).then((res) => {
-    console.log(res.user);
-    return res.user;
-  });
+  let popup = await signInWithPopup(auth, gProvider);
+  return popup.user.uid;
 };
 
-export const signUpWithFacebook = () => {
+export const signUpWithFacebook = async (): Promise<string> => {
   const fProvider = new FacebookAuthProvider();
   const auth = getAuth();
-  signInWithPopup(auth, fProvider).then((res) => {
-    return res.user;
-  });
+  let popup = await signInWithPopup(auth, fProvider);
+  return popup.user.uid;
 };
