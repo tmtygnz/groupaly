@@ -1,23 +1,36 @@
 import { initializeApp } from "firebase/app";
 import { Firestore, getFirestore } from "firebase/firestore";
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {
+  FacebookAuthProvider,
+  getAuth,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
 
 let firebaseConfig;
 let app;
 let db;
 
 export const init = (key: string) => {
-    const unHashed = Buffer.from(key, "base64").toString("binary");
-    firebaseConfig = JSON.parse(unHashed);
-    app = initializeApp(firebaseConfig);
-    db = getFirestore(app);
-}
+  const unHashed = Buffer.from(key, "base64").toString("binary");
+  firebaseConfig = JSON.parse(unHashed);
+  app = initializeApp(firebaseConfig);
+  db = getFirestore(app);
+};
 
 export const signUpWithGoogle = () => {
-    const gProvider = new GoogleAuthProvider();
-    const auth = getAuth();
-    signInWithPopup(auth, gProvider).then((res) => {
-        console.log(res.user);
-        return res.user;
-    });
-}
+  const gProvider = new GoogleAuthProvider();
+  const auth = getAuth();
+  signInWithPopup(auth, gProvider).then((res) => {
+    console.log(res.user);
+    return res.user;
+  });
+};
+
+export const signUpWithFacebook = () => {
+  const fProvider = new FacebookAuthProvider();
+  const auth = getAuth();
+  signInWithPopup(auth, fProvider).then((res) => {
+    return res.user;
+  });
+};

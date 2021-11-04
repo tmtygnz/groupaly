@@ -1,6 +1,6 @@
 import { NextPage } from "next"
 import React from "react";
-import { init, loginWithGoogle } from "../../authentication/login";
+import { init, signUpWithFacebook, signUpWithGoogle } from "../../authentication/signup";
 import { Button } from "../../components/ui/Button";
 
 interface Props {
@@ -21,8 +21,8 @@ const singup: React.FC<Props> = ({auth}) => {
 					</span>
 				</div>
 				<div className="Platforms flex flex-col mt-3">
-					<Button className="my-2" onClick={() => loginWithGoogle()}>Google</Button>
-					<Button className="my-2">Facebook</Button>
+					<Button className="my-2" onClick={() => signUpWithGoogle()}>Google</Button>
+					<Button className="my-2" onClick={() => signUpWithFacebook()}>Facebook</Button>
 				</div>
 			</div>
 		</div >
