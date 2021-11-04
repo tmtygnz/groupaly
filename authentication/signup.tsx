@@ -13,7 +13,7 @@ export const init = (key: string) => {
     db = getFirestore(app);
 }
 
-export const loginWithGoogle = () => {
+export const signUpWithGoogle = () => {
     const gProvider = new GoogleAuthProvider();
     const auth = getAuth();
     signInWithPopup(auth, gProvider).then((res) => {
