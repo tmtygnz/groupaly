@@ -5,8 +5,10 @@ import {
   getAuth,
   GoogleAuthProvider,
   signInWithPopup,
+  UserCredential,
 } from "firebase/auth";
 import { useUser } from "../context/UserContext";
+import axios from "axios";
 
 let firebaseConfig;
 let app;
@@ -23,7 +25,15 @@ export const signUpWithGoogle = async (): Promise<string> => {
   const gProvider = new GoogleAuthProvider();
   const auth = getAuth();
   let popup = await signInWithPopup(auth, gProvider);
+  let createResp = await axios.post(`http://localhost:3001/users/create?userName`, {}, {headers: {
+    "userName": popup.user.displayName!,
+    "userID": popup.user.uid!,
+    "profURL": popup.user.photoURL!
+  }});
+  console.log(popup);
+  console.log(createResp);
   return popup.user.uid;
+
 };
 
 export const signUpWithFacebook = async (): Promise<string> => {

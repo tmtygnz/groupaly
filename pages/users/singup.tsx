@@ -20,7 +20,6 @@ const singup: React.FC<Props> = ({ auth }) => {
 
   const Google = async () => {
     let userData = await signUpWithGoogle();
-    console.log(userData);
     updateUser(userData);
     router.push("/");
   };
