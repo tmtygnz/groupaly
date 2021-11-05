@@ -1,6 +1,7 @@
 import React from "react";
 import { InfdosLogo } from "../../icon/InfdosLogo";
 import { Alink } from "../ui/Alink";
+import { Avatar } from "../ui/Avatar";
 
 export const Header = () => {
   return (
@@ -19,9 +20,10 @@ export const Header = () => {
         <Alink href="#" className="m-2">
           Settings
         </Alink>
-        <Alink href="#" className="m-2">
-          Account
-        </Alink>
+        <Avatar
+          className="m-2"
+          url="https://lh3.googleusercontent.com/a-/AOh14Gj7sGErI0WJghdsJvDK-LMznbglIlHlvmCPG51BjQ=s96-c"
+        />
       </div>
     </div>
   );

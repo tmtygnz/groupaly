@@ -1,8 +1,9 @@
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "../components/ui/Button";
 import { useUser } from "../context/UserContext";
+
 const Home: NextPage = () => {
   const router = useRouter();
   let { user, updateUser } = useUser();
