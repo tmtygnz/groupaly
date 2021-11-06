@@ -1,9 +1,11 @@
 import React from "react";
+import { useUser } from "../../context/NewUserContext";
 import { InfdosLogo } from "../../icon/InfdosLogo";
 import { Alink } from "../ui/Alink";
 import { Avatar } from "../ui/Avatar";
 
 export const Header = () => {
+  const {user, updateUser} = useUser();
   return (
     <div className="bg-brn-700 w-screen h-14 flex items-center justify-between p-5">
       <div className="flex items-center">
@@ -22,7 +24,7 @@ export const Header = () => {
         </Alink>
         <Avatar
           className="m-2"
-          url="https://lh3.googleusercontent.com/a-/AOh14Gj7sGErI0WJghdsJvDK-LMznbglIlHlvmCPG51BjQ=s96-c"
+          url={user?.user.photoURL}
         />
       </div>
     </div>
