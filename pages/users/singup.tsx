@@ -7,7 +7,7 @@ import {
   signUpWithGoogle,
 } from "../../authentication/signup";
 import { Button } from "../../components/ui/Button";
-import { useUser } from "../../context/UserContext";
+import { useUser } from "../../context/NewUserContext";
 
 interface Props {
   auth: string;
@@ -17,7 +17,7 @@ const singup: React.FC<Props> = ({ auth }) => {
   let { user, updateUser } = useUser();
   const router = useRouter();
   init(auth);
-
+  
   const Google = async () => {
     let userData = await signUpWithGoogle();
     updateUser(userData);

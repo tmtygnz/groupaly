@@ -21,19 +21,21 @@ export const init = (key: string) => {
   db = getFirestore(app);
 };
 
-export const signUpWithGoogle = async (): Promise<string> => {
+export const signUpWithGoogle = async (): Promise<UserCredential> => {
   const gProvider = new GoogleAuthProvider();
   const auth = getAuth();
   let popup = await signInWithPopup(auth, gProvider);
-  let createResp = await axios.post(`http://localhost:3001/users/create?userName`, {}, {headers: {
-    "userName": popup.user.displayName!,
-    "userID": popup.user.uid!,
-    "profURL": popup.user.photoURL!
-  }});
-  console.log(popup);
-  console.log(createResp);
-  return popup.user.uid;
-
+  let createResp = await axios.post(
+    `http://localhost:3001/users/create?userName`,
+    {},
+    {
+      headers: {
+        userName: popup.user.displayName!,
+        userID: popup.user.uid!,
+      },
+    }
+  );
+  return popup;
 };
 
 export const signUpWithFacebook = async (): Promise<string> => {
