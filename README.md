@@ -7,6 +7,7 @@
 | Bug Desc                   | Where  | Status   |
 |----------------------------|--------|----------|
 | Failed to load SWC library | NextJS | Resolved |
+| Facebook login failed      | Infdos | Fixing🔨|
 
 ###
 ---
