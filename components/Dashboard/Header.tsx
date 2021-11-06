@@ -24,7 +24,7 @@ export const Header = () => {
         </Alink>
         <Avatar
           className="m-2"
-          url={user?.user.photoURL}
+          url={user?.user.photoURL!}
         />
       </div>
     </div>
