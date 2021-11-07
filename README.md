@@ -15,3 +15,4 @@
 |-------------------|-----------------------|
 | Facebook Login    |Will be added later    |
 | Better UI         |Will be added later    |
+| Use default url instead of `/dashboard` for the dashboard | currently working on.|
