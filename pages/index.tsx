@@ -1,15 +1,17 @@
-import type { NextPage } from "next";
+import type { GetServerSideProps, NextPage } from "next";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { Button } from "../components/ui/Button";
 import { useUser } from "../context/NewUserContext";
+import axios from "axios";
+import cookie from "cookie";
 
 const Home: NextPage = () => {
   const router = useRouter();
+
   let { user, updateUser } = useUser();
-  if(user!) {
+  if (user!) {
     console.log(user);
-    router.push("/dashboard");
   }
   console.log(user);
   return (
@@ -20,3 +22,13 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
+  console.log("test");
+  return {
+    redirect: {
+      destination: "/dashboard",
+      permanent: true,
+    },
+  };
+};

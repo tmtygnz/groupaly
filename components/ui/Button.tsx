@@ -11,20 +11,24 @@ const buttonPadding = {
 };
 
 const colorTypes = {
-  normal: "bg-brn-500 hover:bg-brn-400 active:ring-4 text-white",
-  blue: "bg-blue-accent hover:bg-blue-accent-dark text-white",
+  weborange:
+    "bg-web-orange-300 hover:bg-web-orange-350 active:bg-web-orange-400",
+  bluepearl:
+    "bg-black-pearl-500 hover:bg-black-pearl-600 active:bg-black-pearl-700",
+  elecviolet:
+    "bg-electric-violet-600 hover:bg-electric-violet-700 active:bg-electric-violet-800",
 };
 
 export const Button: React.FC<Props> = ({
   children,
   className,
-  Type = "normal",
+  Type = "elecviolet",
   padding = "normal",
   ...props
 }) => {
   return (
     <button
-      className={`font-bold rounded-lg transition duration-200 ease-in-out
+      className={`font-bold transition duration-200 ease-in-out
 			${colorTypes[Type]} ${buttonPadding[padding]} ${className}`}
       {...props}
     >
