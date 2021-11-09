@@ -5,7 +5,7 @@ import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <div className={`h-screen bg-bg text-white`}>
+    <div className={`h-screen bg-bg text-black-pearl-900`}>
       <NewUserProvider>
         <Component {...pageProps} />
       </NewUserProvider>

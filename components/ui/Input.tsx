@@ -1,21 +1,22 @@
 import React, { InputHTMLAttributes } from "react";
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
-	size?: keyof typeof sizes
+  inputSize?: keyof typeof sizes;
 }
 
 const sizes = {
-	normal:"w-36",
-	lg:"w-80"
-}
+  normal: "text-base",
+  large: "text-xl",
+  small: "text-sm",
+};
 
-export const Input: React.FC<Props> = ({size ="normal", ...props}) => {
+export const Input: React.FC<Props> = ({ inputSize = "normal", ...props }) => {
   return (
-    <div>
+    <div className="m-10">
       <input
-        className={`bg-black border border-gray-800 focus:border-white transition duration-200 ease-in-out
-				text-white outline-none px-2 py-1 rounded ${sizes[size]}`}
-				{...props}
+        className={`border focus:border-electric-violet-900 focus:outline-none ${sizes[inputSize]} px-4 py-2.5 
+        placeholder-electric-violet-400 transition duration-200 ease-in-out`}
+        {...props}
       />
     </div>
   );

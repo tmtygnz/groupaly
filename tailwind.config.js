@@ -6,6 +6,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        black: "#082032",
         "web-orange": {
           50: "#fff4db",
           100: "#ffeabd",
@@ -46,7 +47,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ["Mulish", ...defaultTheme.fontFamily.sans],
+        sans: ["Fira Code", ...defaultTheme.fontFamily.sans],
       },
     },
   },
@@ -54,6 +55,7 @@ module.exports = {
     extend: {
       backgroundColor: ["active"],
       ringWidth: ["active", "hover"],
+      outline: ["active"],
     },
   },
   plugins: [],

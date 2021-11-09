@@ -28,7 +28,7 @@ export const Button: React.FC<Props> = ({
 }) => {
   return (
     <button
-      className={`font-bold transition duration-200 ease-in-out
+      className={`font-bold transition duration-200 ease-in-out text-white
 			${colorTypes[Type]} ${buttonPadding[padding]} ${className}`}
       {...props}
     >
