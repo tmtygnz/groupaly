@@ -13,7 +13,7 @@ interface Props {
   auth: string;
 }
 
-const singup: React.FC<Props> = ({ auth }) => {
+const signup: React.FC<Props> = ({ auth }) => {
   let { user, updateUser } = useUser();
   const router = useRouter();
   init(auth);
@@ -49,7 +49,7 @@ const singup: React.FC<Props> = ({ auth }) => {
   );
 };
 
-export default singup;
+export default signup;
 
 export const getServerSideProps = async () => {
   return {
