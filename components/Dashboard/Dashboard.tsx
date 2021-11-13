@@ -14,7 +14,7 @@ export const Dashboard = () => {
   }, []);
   return (
     <div className="h-full">
-      <div className="banner h-20 flex items-center justify-center bg-gradient-to-r from-green-400 to-blue-500 rounded m-3 realtive">
+      <div className="banner h-20 flex items-center justify-center bg-red text-baige realtive">
         <div className="m-3">
           <span className="Quote font-bold">{bannerQuote}</span>
           <span className="Author font-light italic"> -{bannerQuoteAuthor}</span>
