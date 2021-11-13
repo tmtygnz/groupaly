@@ -2,6 +2,8 @@
 
 > Making studying easier. 
 
+NOTE: Remaking Design
+
 ### Known Issues
 ---
 | Bug Desc                   | Where  | Status   |
