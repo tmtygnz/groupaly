@@ -8,7 +8,7 @@ const test: NextPage = () => {
   return (
     <div>
       <Button>Go Back</Button>
-      <Input placeholder="john.doe@gmail.com"/>
+      <Input placeholder="Placeholder"/>
     </div>
   );
 };

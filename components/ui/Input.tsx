@@ -14,8 +14,7 @@ export const Input: React.FC<Props> = ({ inputSize = "normal", ...props }) => {
   return (
     <div className="m-10">
       <input
-        className={`border focus:border-electric-violet-900 focus:outline-none ${sizes[inputSize]} px-4 py-2.5 
-        placeholder-electric-violet-400 transition duration-200 ease-in-out`}
+        className={`border border-black bg-baige_red  placeholder-red py-2 px-3 focus:border-red focus:border-2`}
         {...props}
       />
     </div>
