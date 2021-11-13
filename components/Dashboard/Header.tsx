@@ -7,25 +7,20 @@ import { Avatar } from "../ui/Avatar";
 export const Header = () => {
   const {user, updateUser} = useUser();
   return (
-    <div className="bg-brn-700 w-screen h-14 flex items-center justify-between p-5">
-      <div className="flex items-center">
-        <InfdosLogo />
-        <span className="banner ml-3 text-xs">
-          This application is still in development if you encounter any bug
-          please report it imidately
-        </span>
+    <div className="border-b-2 hover:shadow-xl transition duration-200 ease-in-out border-black w-screen h-14 flex items-center justify-between p-5">
+      <div>
+        <InfdosLogo/>
       </div>
-      <div className="flex items-center justify-evenly">
-        <Alink href="#" className="m-2">
+      <div className="flex items-center justify-center">
+        <Alink href={"#"} className="mx-2">
           Dashboard
         </Alink>
-        <Alink href="#" className="m-2">
+        <Alink href={"#"} className="mx-2">
           Settings
         </Alink>
-        <Avatar
-          className="m-2"
-          url={user?.user.photoURL!}
-        />
+        <Alink href={"#"} className="mx-2">
+          <Avatar url={user?.user.photoURL!}/>
+        </Alink>
       </div>
     </div>
   );
