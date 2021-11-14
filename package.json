@@ -1,5 +1,5 @@
 {
-  "name": "infdos",
+  "name": "groupaly",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,6 +11,7 @@
   "dependencies": {
     "@types/cookie": "^0.4.1",
     "ajv": "^8.6.3",
+    "apexcharts": "^3.30.0",
     "autoprefixer": "^10.3.7",
     "axios": "^0.24.0",
     "cookie": "^0.4.1",
