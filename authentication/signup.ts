@@ -26,7 +26,7 @@ export const signUpWithGoogle = async (): Promise<UserCredential> => {
   const auth = getAuth();
   let popup = await signInWithPopup(auth, gProvider);
   let createResp = await axios.post(
-    `http://localhost:3001/users/create?userName`,
+    `http://localhost:3001/users/create`,
     {},
     {
       headers: {

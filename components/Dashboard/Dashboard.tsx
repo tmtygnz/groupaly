@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { SesssionGraph } from "./SesssionGraph";
 
 export const Dashboard = () => {
   const [bannerQuote, setQuote] = useState("");
@@ -20,6 +21,7 @@ export const Dashboard = () => {
           <span className="Author font-light italic"> -{bannerQuoteAuthor}</span>
         </div>
       </div>
+      <SesssionGraph/>
     </div>
   );
 };

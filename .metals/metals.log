@@ -1,0 +1,9 @@
+[0m2021.11.16 15:18:35 INFO  Started: Metals version 0.10.9 in workspace 'C:\Users\josti\Documents\infdos\infdos' for client Visual Studio Code 1.62.2.[0m
+[0m2021.11.16 15:18:38 INFO  time: initialize in 3.17s[0m
+[0m2021.11.16 15:18:39 WARN  Build server is not auto-connectable.[0m
+[0m2021.11.16 15:18:39 WARN  no build tool detected in workspace 'C:\Users\josti\Documents\infdos\infdos'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.11.16 15:20:14 INFO  [0m
+[0m2021.11.16 15:20:14 INFO  Template applied in C:\Users\josti\Documents\infdos\groupaly-api\.\groupaly[0m
+[0m2021.11.16 15:20:14 INFO  [0m
+[0m2021.11.16 15:20:14 INFO  time: ran 'giter8.Giter8' in 9.25s[0m
+[0m2021.11.16 15:21:07 INFO  shutting down Metals[0m
