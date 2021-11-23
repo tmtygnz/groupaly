@@ -18,10 +18,14 @@ export const Dashboard = () => {
       <div className="banner h-20 flex items-center justify-center bg-red text-baige realtive">
         <div className="m-3">
           <span className="Quote font-bold">{bannerQuote}</span>
-          <span className="Author font-light italic"> -{bannerQuoteAuthor}</span>
+          <span className="Author font-light italic">
+            -{bannerQuoteAuthor}
+          </span>
         </div>
       </div>
-      <SesssionGraph/>
+      <div className="graphs">
+        <SesssionGraph />
+      </div>
     </div>
   );
 };

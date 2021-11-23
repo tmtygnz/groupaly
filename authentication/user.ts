@@ -14,6 +14,8 @@ export interface IUser {
   name: string;
   dateCreated: Timestamp;
   key: string;
-  sessionsDoneThisWeek: Array<number>;
-  taskDoneThisWeek: Array<number>;
+  sessionsCompletedThisWeek: Array<number>;
+  taskCompletedWeek: Array<number>;
+  numSessionsCompleted: number;
+  numTaskCompleted: number;
 }
