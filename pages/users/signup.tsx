@@ -5,7 +5,7 @@ import {
   init,
   signUpWithFacebook,
   signUpWithGoogle,
-} from "../../authentication/signup";
+} from "../../sdk/signup";
 import { Button } from "../../components/ui/Button";
 import { useUser } from "../../context/NewUserContext";
 

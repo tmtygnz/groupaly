@@ -8,7 +8,7 @@ module.exports = {
       colors: {
         baige: "#EEEBDD",
         baige_red: "#D8B6A4",
-        red: "#630000"
+        red: "#630000",
       },
       fontFamily: {
         sans: ["Montserrat", ...defaultTheme.fontFamily.sans],
@@ -20,6 +20,7 @@ module.exports = {
       backgroundColor: ["active"],
       ringWidth: ["active", "hover"],
       outline: ["active"],
+      scale: ["hover"],
     },
   },
   plugins: [],
