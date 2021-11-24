@@ -13,9 +13,6 @@ export const Header = () => {
       </div>
       <div className="flex items-center justify-center">
         <Alink href={"#"} className="mx-2">
-          Dashboard
-        </Alink>
-        <Alink href={"#"} className="mx-2">
           Settings
         </Alink>
         <div className="mx-2">
