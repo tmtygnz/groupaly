@@ -35,5 +35,5 @@ yarn-error.log*
 .vercel
 
 #misc
-/.metals
-/.vscode
+/.metals/
+/.vscode/
