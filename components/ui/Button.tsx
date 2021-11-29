@@ -6,6 +6,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const buttonPadding = {
+  none: "",
   sm: "px-5 py-px",
   normal: "px-8 py-2.5",
 };
@@ -24,8 +25,8 @@ export const Button: React.FC<Props> = ({
 }) => {
   return (
     <button
-      className={`font-bold transition duration-200 ease-in-out text-baige
-			${colorTypes[Type]} ${buttonPadding[padding]} ${className}`}
+      className={`${className} font-bold transition duration-200 ease-in-out text-baige
+			${colorTypes[Type]} ${buttonPadding[padding]}`}
       {...props}
     >
       {children}

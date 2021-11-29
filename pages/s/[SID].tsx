@@ -7,7 +7,7 @@ const SessionPage = () => {
   const { SID } = router.query;
   return (
     <div className="h-full flex p-5">
-      <div className="top flex flex-rows">
+      <div className="top w-full">
         <Timer/>
       </div>
     </div>
