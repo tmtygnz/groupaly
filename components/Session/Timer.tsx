@@ -8,28 +8,28 @@ export const Timer = () => {
   const [timer, setTimer] = useState<NodeJS.Timer>();
   const countDownDate = new Date("Jan 5, 2022 15:37:25").getTime();
 
-  const startTimer = () => {
+  const startTimer = (countDownAmount: number) => {
     setIsCountingDown(true);
+    let timeToEnd = countDownAmount * 60 * 1000;
     setTimer(
       setInterval(() => {
-        const timeNow = new Date().getTime();
-        const range = countDownDate - timeNow;
-        var hours = Math.floor(
-          (range % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-        );
-        var mins = Math.floor((range % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((range % (1000 * 60)) / 1000);
-        var time = `${hours}:${mins}.${seconds}`;
-        setTimeLeft((timeLeft) => time);
+        timeToEnd -= 1000;
+        const minutes = Math.floor(timeToEnd / (60 * 1000));
+        const seconds = Math.floor((timeToEnd - minutes * 60 * 1000) / 1000);
+        const formattedTime = `${minutes}:${seconds}`;
+        setTimeLeft(formattedTime);
+        if (timeToEnd == 0) {
+          alert("Done");
+          stopTimer();
+        }
       }, 1000)
     );
   };
 
   const stopTimer = () => {
-    clearInterval(timer!);
     setIsCountingDown(false);
-    setTimeLeft("00:00.00");
-  }
+    clearInterval(timer!);
+  };
 
   return (
     <div className="bg-baige_red rounded w-3/12 p-5">
@@ -42,7 +42,7 @@ export const Timer = () => {
           <Button Type="black">
             <FiPause />
           </Button>
-          <Button className="ml-3" onClick={()=>stopTimer()}>
+          <Button className="ml-3" onClick={() => stopTimer()}>
             <FiSquare />
           </Button>
         </div>
@@ -56,7 +56,7 @@ export const Timer = () => {
             <option value="10">10 mins</option>
             <option value="5">5 mins</option>
           </select>
-          <Button className="ml-3" onClick={()=>startTimer()}>
+          <Button className="ml-3" onClick={() => startTimer(0.1)}>
             <FiPlay />
           </Button>
         </div>
