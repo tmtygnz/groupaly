@@ -9,17 +9,14 @@ const userCtxDefault: IUser = {
 const userCtx = createContext<IUser>(userCtxDefault);
 
 export const NewUserProvider: React.FC = ({ children }) => {
-  console.log("Debyg");
   const [user, setUser] = useState<UserCredential | null>(null);
 
   useEffect(() => {
-    console.log("Debyg");
     let localUser = localStorage.getItem("infdosUser");
     if (localUser) {
       let jsonUser: UserCredential = JSON.parse(localUser);
       setUser(jsonUser);
     }
-		console.log(user);
   }, []);
 
   const updateUser = (user: UserCredential) => {
@@ -37,7 +34,5 @@ interface IUser {
 }
 
 export const useUser = () => {
-  console.log("Debyg");
-
   return useContext(userCtx);
 };

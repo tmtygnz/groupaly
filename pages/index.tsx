@@ -11,9 +11,9 @@ const Home: NextPage = () => {
 
   let { user, updateUser } = useUser();
   if (user!) {
+    //redirect
     console.log(user);
   }
-  console.log(user);
   return (
     <div className={`h-screen p-5 text-white`}>
       <Button onClick={() => router.push("/dashboard")}>Go To Dashboard</Button>
@@ -24,7 +24,6 @@ const Home: NextPage = () => {
 export default Home;
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
-  console.log("test");
   return {
     redirect: {
       destination: "/dashboard",

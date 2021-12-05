@@ -6,6 +6,7 @@ export const Timer = () => {
   const [timeLeft, setTimeLeft] = useState("00:00.00");
   const [isCountingDown, setIsCountingDown] = useState(false);
   const [timer, setTimer] = useState<NodeJS.Timer>();
+	const [milis, setMilis] = useState(1000);
   const countDownDate = new Date("Jan 5, 2022 15:37:25").getTime();
 
   const startTimer = (countDownAmount: number) => {
@@ -18,10 +19,7 @@ export const Timer = () => {
         const seconds = Math.floor((timeToEnd - minutes * 60 * 1000) / 1000);
         const formattedTime = `${minutes}:${seconds}`;
         setTimeLeft(formattedTime);
-        if (timeToEnd == 0) {
-          alert("Done");
-          stopTimer();
-        }
+				setMilis(timeToEnd);
       }, 1000)
     );
   };
@@ -30,6 +28,13 @@ export const Timer = () => {
     setIsCountingDown(false);
     clearInterval(timer!);
   };
+
+	useEffect(() => {
+		if(milis <= 0){
+			alert("interval done");
+			stopTimer();
+		}
+	}, [milis])
 
   return (
     <div className="bg-baige_red rounded w-3/12 p-5">
@@ -56,7 +61,7 @@ export const Timer = () => {
             <option value="10">10 mins</option>
             <option value="5">5 mins</option>
           </select>
-          <Button className="ml-3" onClick={() => startTimer(0.1)}>
+          <Button className="ml-3" onClick={() => startTimer(10)}>
             <FiPlay />
           </Button>
         </div>
