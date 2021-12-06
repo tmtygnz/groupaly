@@ -2,11 +2,11 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 import { UserCredential } from "firebase/auth";
 import Ajv, { JSONSchemaType } from "ajv";
 
-const userCtxDefault: IUser = {
+const userCtxDefault: IUserContext = {
   user: null,
   updateUser: (user: UserCredential) => null,
 };
-const userCtx = createContext<IUser>(userCtxDefault);
+const userCtx = createContext<IUserContext>(userCtxDefault);
 
 export const NewUserProvider: React.FC = ({ children }) => {
   const [user, setUser] = useState<UserCredential | null>(null);
@@ -28,7 +28,7 @@ export const NewUserProvider: React.FC = ({ children }) => {
   return <userCtx.Provider value={{ user, updateUser }}>{children}</userCtx.Provider>;
 };
 
-interface IUser {
+interface IUserContext {
   user: UserCredential | null;
   updateUser: (user: UserCredential) => void;
 }
