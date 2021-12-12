@@ -12,7 +12,7 @@ Create a .env file in the root directory and add the following inside
 `FIREBASE`
 Encode your firebase config as base64.
 
-
+### Currently working on improving the design to give a consistent user interface for the users
 
 ## Authors
 
