@@ -3,10 +3,8 @@ import { Button } from "../ui/Button";
 import { IoClose } from "react-icons/io5";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useSession } from "../../context/SessionContext";
 
 export const Navbar = () => {
-  const session = useSession();
   const copyCode = async () => {
     const emojis = ["📎", "😆", "🐐", "🧑‍💻"];
     const randEmoji = Math.floor(Math.random() * 4);
@@ -17,7 +15,7 @@ export const Navbar = () => {
     <div className="bg-baige_red flex justify-between w-full p-5">
       <div className="code inline-flex items-center rounded overflow-hidden bg-red">
         <div className="code-text text-baige font-semibold m-2">
-          {session.id}
+          
         </div>
         <div className="copy-button">
           <Button Type="black" onClick={() => copyCode()}>
