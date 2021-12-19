@@ -1,17 +1,44 @@
-import React, { createContext, useContext } from "react";
-import io, {Socket} from "socket.io-client";
+import React, { createContext, useContext, useEffect, useState } from "react";
+import { IMessage } from "../interface/IMessage";
+import { ISession } from "../interface/ISession";
+import { IUser } from "../interface/IUser";
+import { useUser } from "./NewUserContext";
+import { useSocket } from "./SocketContext";
 
-const socket = io("http://localhost:3001");
-let sessionCtx = createContext<Socket>(socket);
+const sessionContextDefault: ISession = {
+  sid: "",
+  users: [],
+  messages: [],
+};
 
-export const SessionContext:React.FC = ({children}) => {
+interface sessionContextProps {
+  sid: string;
+}
+
+const sessionCtx = createContext<ISession>(sessionContextDefault);
+
+export const SessionContext: React.FC<sessionContextProps> = ({
+  children,
+  sid,
+}) => {
+  const user = useUser();
+  const [users, setUsers] = useState<Array<IUser>>([]);
+  const [messages, setMessages] = useState<Array<IMessage>>([]);
+  const socket = useSocket();
+
+  useEffect(() => {
+    if (sid) {
+      socket.emit("join", { user, sid });
+    }
+  }, []);
+
   return (
-    <sessionCtx.Provider value={socket}>
+    <sessionCtx.Provider value={{ sid, users, messages }}>
       {children}
     </sessionCtx.Provider>
-  )
-}
+  );
+};
 
-export const useSocket = () => {
+export const useSession = () => {
   return useContext(sessionCtx);
-}
+};
