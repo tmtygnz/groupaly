@@ -4,6 +4,7 @@ import { Navbar } from "../../components/Session/Navbar";
 import { Spotify } from "../../components/Session/Spotify";
 import { Timer } from "../../components/Session/Timer";
 import { Button } from "../../components/ui/Button";
+import { Loader } from "../../components/ui/Loader";
 import { SessionContext, useSession } from "../../context/SessionContext";
 import { SocketContext, useSocket } from "../../context/SocketContext";
 
@@ -39,7 +40,9 @@ const SessionPage = () => {
           </SessionContext>
         </SocketContext>
       ) : (
-        <p>Gathering Data</p>
+        <div className="flex items-center justify-center h-full">
+          <Loader/>
+        </div>
       )}
     </div>
   );
