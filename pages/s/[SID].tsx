@@ -4,6 +4,7 @@ import { Navbar } from "../../components/Session/Navbar";
 import { Spotify } from "../../components/Session/Spotify";
 import { Timer } from "../../components/Session/Timer";
 import { Button } from "../../components/ui/Button";
+import { FullPageLoader } from "../../components/ui/FullPageLoader";
 import { Loader } from "../../components/ui/Loader";
 import { SessionContext, useSession } from "../../context/SessionContext";
 import { SocketContext, useSocket } from "../../context/SocketContext";
@@ -12,13 +13,6 @@ const SessionPage = () => {
   const router = useRouter();
   const socket = useSocket();
   const { SID } = router.query;
-  useEffect(() => {
-    if (!SID) {
-      console.log("Hello");
-    } else {
-      console.log("hiu");
-    }
-  }, [SID]);
   return (
     <div className="h-full">
       {SID ? (
@@ -40,9 +34,7 @@ const SessionPage = () => {
           </SessionContext>
         </SocketContext>
       ) : (
-        <div className="flex items-center justify-center h-full">
-          <Loader/>
-        </div>
+        <FullPageLoader/>
       )}
     </div>
   );

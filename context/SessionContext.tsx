@@ -29,6 +29,8 @@ export const SessionContext: React.FC<sessionContextProps> = ({
   useEffect(() => {
     if (sid) {
       socket.emit("join", { user, sid });
+      socket.on("user-join", (x) => console.log(x));
+      socket.on("alert", () => alert("what??"));
     }
   }, []);
 
