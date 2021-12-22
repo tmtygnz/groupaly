@@ -3,6 +3,7 @@ import { IUser } from "./IUser";
 import { Socket } from "socket.io-client";
 export interface ISession {
   sid: string;
+  socket?: Socket;
   users: Array<IUser>;
   messages: Array<IMessage>;
 }

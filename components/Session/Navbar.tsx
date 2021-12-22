@@ -3,7 +3,7 @@ import { Button } from "../ui/Button";
 import { IoClose } from "react-icons/io5";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useSession } from "../../context/SessionContext";
+import { useSession } from "./Session";
 
 export const Navbar = () => {
   const session = useSession();
@@ -39,3 +39,4 @@ export const Navbar = () => {
     </div>
   );
 };
+
