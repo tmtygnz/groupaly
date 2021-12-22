@@ -29,15 +29,24 @@ export const Session: React.FC<sessionCtx> = ({ children, sid }) => {
   const [messages, setMessages] = useState<Array<IMessage>>([]);
 
   useEffect(() => {
-    socket.on("connect", () => {
-      console.log({ user, sid });
-      socket.emit("me-join", { user, sid });
+    console.log("updating?");
+    console.log("connecting");
+    console.log({ user, sid });
+    socket.emit("me-join", { user, sid });
+
+    socket.on("connect_timeout", () => {
+      alert("Connection Timeout");
+    });
+
+    socket.on("connect_error", () => {
+      alert("Connection Error");
     });
 
     socket.on("user-join", (x) => {
+      console.log("new alert");
       alert(x);
     });
-  }, [sid]);
+  }, []);
 
   return (
     <sessionCtx.Provider value={{ sid, socket, users, messages }}>
