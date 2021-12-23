@@ -12,8 +12,9 @@ export const StatsBlock = () => {
 
   useEffect(() => {
     const getStats = async () => {
-      if (user?.user.uid != undefined) {
-        let resp = await getUserFromServer(user?.user.uid!);
+      if (user?.uid != undefined) {
+        let resp = await getUserFromServer(user?.uid);
+        console.log(resp);
         setNumSessionCompleted(resp.numSessionsCompleted);
         setNumTaskCompleted(resp.numTaskCompleted);
       }

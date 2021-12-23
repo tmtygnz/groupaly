@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { Navbar } from "./Navbar";
-import { Spotify } from "./Spotify";
+import { Participants } from "./Participants";
 import { Timer } from "./Timer";
 import { io } from "socket.io-client";
 import { IUser } from "../../interface/IUser";
@@ -62,7 +62,7 @@ export const Session: React.FC<sessionCtx> = ({ children, sid }) => {
                 <Timer />
               </div>
               <div className="bottom w-full h-full mt-5">
-                <Spotify />
+                <Participants />
               </div>
             </div>
             <div className="nav-bar">

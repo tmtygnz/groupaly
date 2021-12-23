@@ -17,8 +17,8 @@ export const Header = () => {
         </Alink>
         <div className="mx-2 cursor-pointer">
           <div className="avatar flex items-center justify-between bg-red rounded-full p-2 hover:bg-black transition duration-200 ease-in-out">
-            <Avatar url={user?.user.photoURL!} />
-            <div className="name text-baige mx-1">{user?.user.displayName?.split(" ")[0]}</div>
+            <Avatar url={"https://bit.ly/3qmTENg"} />
+            <div className="name text-baige mx-1">{user?.name}</div>
           </div>
         </div>
       </div>

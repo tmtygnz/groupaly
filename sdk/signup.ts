@@ -7,8 +7,8 @@ import {
   signInWithPopup,
   UserCredential,
 } from "firebase/auth";
-import { useUser } from "../context/UserContext";
 import axios from "axios";
+import { IUser } from "../interface/IUser";
 
 let firebaseConfig;
 let app;
@@ -21,11 +21,11 @@ export const init = (key: string) => {
   db = getFirestore(app);
 };
 
-export const signUpWithGoogle = async (): Promise<UserCredential> => {
+export const signUpWithGoogle = async (): Promise<IUser> => {
   const gProvider = new GoogleAuthProvider();
   const auth = getAuth();
   let popup = await signInWithPopup(auth, gProvider);
-  let createResp = await axios.post(
+  let createResp = await axios.post<IUser>(
     `http://localhost:3001/users/create`,
     {},
     {
@@ -35,7 +35,7 @@ export const signUpWithGoogle = async (): Promise<UserCredential> => {
       },
     }
   );
-  return popup;
+  return createResp.data;
 };
 
 export const signUpWithFacebook = async (): Promise<string> => {
