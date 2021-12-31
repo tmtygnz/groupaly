@@ -1,6 +1,6 @@
 ![Logo](https://i.ibb.co/cyX6G8D/Group-1.png)
 
-# Groupaly
+# Groupaly [Development Will Continue Febuary 2022]
 
 Groupaly makes studying by your self or with your pals easier. Join or create Sessions to get started
 
